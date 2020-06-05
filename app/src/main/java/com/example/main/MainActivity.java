@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         Button startBtn = (Button)findViewById(R.id.startBtn);
         startBtn.setOnClickListener(new Button.OnClickListener() {
             @Override
-            public void onClick(View v) { //지역 설정 버튼 누르면 activity_sub 클래스로 화면 전환
-                Intent intent = new Intent(getApplicationContext(), activity_sub.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FirstPageActivity.class);
                 startActivity(intent);
             }
         });
