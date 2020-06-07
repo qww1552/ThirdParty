@@ -34,8 +34,10 @@ public class FirstPageActivity extends AppCompatActivity {
         choiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
-                intent.putExtra("searchTerm",location);
+                //확진자 수 받아오는 처리
+                Intent intent = new Intent(getApplicationContext(), LocalCaseActivity.class);
+
+                intent.putExtra("location",location);
                 startActivity(intent);
             }
         });
@@ -51,5 +53,8 @@ public class FirstPageActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void btnAssign() {
+
     }
 }

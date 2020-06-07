@@ -26,7 +26,7 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         Intent intent = getIntent();
-        String searchTerm ="코로나+"+ intent.getExtras().getString("searchTerm");//검색어
+        String searchTerm ="코로나+"+ intent.getExtras().getString("location");//검색어
 
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
