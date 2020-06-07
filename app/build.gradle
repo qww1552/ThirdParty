@@ -38,9 +38,17 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     implementation 'com.squareup.retrofit2:converter-simplexml:2.1.0'
+    //네이버지도 API
+    implementation 'com.naver.maps:map-sdk:3.8.0'
+
+    //현재 위치
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //API호출, json -> Java 객체
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 }
 repositories {
     mavenCentral()

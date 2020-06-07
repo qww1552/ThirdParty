@@ -63,6 +63,10 @@ class LocalCaseActivity : AppCompatActivity() {
             intent.putExtra("location",selectedLocal)
             startActivity(intent)
         }
+        pharmacy_button.setOnClickListener{
+            val intent = Intent(this,MaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
