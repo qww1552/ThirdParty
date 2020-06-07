@@ -38,8 +38,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    private ArrayList<Item> item;
-    public MyAdapter(ArrayList<Item> item) {
+    private ArrayList<NewsItem> item;
+    public MyAdapter(ArrayList<NewsItem> item) {
         this.item = item;
     }
 

@@ -18,7 +18,7 @@ public class NewsActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    ArrayList<Item> list = new ArrayList<>();
+    ArrayList<NewsItem> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         Intent intent = getIntent();
-        String searchTerm ="코로나+"+ intent.getExtras().getString("searchTerm");//검색어
+        String searchTerm ="코로나+"+ intent.getExtras().getString("location");//검색어
 
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
@@ -60,7 +60,7 @@ public class NewsActivity extends AppCompatActivity {
                     String link = item.select("originallink").text();
                     String pubdate=item.select("pubDate").text();
                     String from = findRoot(link);//기사출처
-                    list.add(new Item(title, link, pubdate,from));//어레이리스트에 결과 저장(Item 객체)
+                    list.add(new NewsItem(title, link, pubdate,from));//어레이리스트에 결과 저장(Item 객체)
                 }
             }
             MyAdapter myAdapter = new MyAdapter(list);
