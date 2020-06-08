@@ -1,12 +1,12 @@
 package com.example.main;
 
-public class Item {
+public class NewsItem {
     private String title;
     private String link;
     private String pubdate;
     private String from;
 
-    public Item(String title, String link, String pubdate,String from){
+    public NewsItem(String title, String link, String pubdate,String from){
         this.title = title;
         this.link = link;
         this.pubdate = pubdate;
