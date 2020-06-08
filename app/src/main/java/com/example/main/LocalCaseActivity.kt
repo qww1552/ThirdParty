@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class LocalCaseActivity : AppCompatActivity() {
 
     private var BASE_URL = "http://openapi.data.go.kr/"
-    private var selectedLocal : String?="제주"   //지역 데이터를 여기서 넣어줘야됨
+    private lateinit var selectedLocal : String   //지역 데이터를 여기서 넣어줘야됨
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +44,23 @@ class LocalCaseActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<JsonStart>, response: Response<JsonStart>) {
                 //성공시
-                Log.e("DDDDAA", response.body()?.response?.header?.resultCode!!)
-                for(localInfo : Item in response.body()?.response?.body?.items?.item!!) {
-                    if(localInfo.gubun != selectedLocal) {   //선택 지역과 일치하지 않을시
-                        continue
+                try {  //null 충돌 발생 가능성
+                    //Log.e("api success??", response.body()?.response?.header?.resultCode!!)
+                    for(localInfo : Item in response.body()?.response?.body?.items?.item!!) {
+                        if(localInfo.gubun != selectedLocal) {   //선택 지역과 일치하지 않을시
+                            continue
+                        }
+                        else if (localInfo.gubun == selectedLocal) { //지역과 일치시
+                            main_local_text_view.text = selectedLocal
+                            main_10man_num_text_view.text = localInfo.qurRate
+                            main_today_num_text_view.text = localInfo.incDec
+                        }
                     }
-                    else if (localInfo.gubun == selectedLocal) { //지역과 일치시
-                        main_local_text_view.text = selectedLocal
-                        main_10man_num_text_view.text = localInfo.qurRate
-                        main_today_num_text_view.text = localInfo.incDec
-                    }
+                } catch (e : NullPointerException){
+                    Toast.makeText(this@LocalCaseActivity, """데이터 받아오기 실패
+                        | 다시 선택해 주세요.""".trimMargin(), Toast.LENGTH_LONG).show()
+                    val intent = Intent(this@LocalCaseActivity ,FirstPageActivity::class.java)
+                    startActivity(intent)
                 }
             }
         })
