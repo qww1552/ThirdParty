@@ -5,6 +5,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.UiSettings;
+import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.overlay.OverlayImage;
@@ -42,6 +45,8 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
     LocationManager locationManager;
     LocationListener locationListener;
 
+    private InfoWindow infoWindow;
+
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
 
     @Override
@@ -61,6 +66,34 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Face);
+
+        infoWindow = new InfoWindow();
+        infoWindow.setAdapter(new InfoWindow.DefaultViewAdapter(this) {
+            @NonNull
+            @Override
+            protected View getContentView(@NonNull InfoWindow infoWindow) { // 인포윈도우
+                Marker marker = infoWindow.getMarker();
+                Store store = (Store) marker.getTag();
+
+                View view = View.inflate(MaskActivity.this, R.layout.info_view, null);
+
+                ((TextView) view.findViewById(R.id.name)).setText(store.name); // 약국이름
+
+                if ("plenty".equalsIgnoreCase(store.remain_stat)) { // 마스크 재고량
+                    ((TextView) view.findViewById(R.id.stock)).setText("재고: 100개 ~");
+                } else if ("some".equalsIgnoreCase(store.remain_stat)) {
+                    ((TextView) view.findViewById(R.id.stock)).setText("재고: 30 ~ 100개");
+                } else if ("few".equalsIgnoreCase(store.remain_stat)) {
+                    ((TextView) view.findViewById(R.id.stock)).setText("재고: 2 ~ 30개");
+                } else if ("empty".equalsIgnoreCase(store.remain_stat)){
+                    ((TextView) view.findViewById(R.id.stock)).setText("재고: 0 ~ 1개");
+                } else {
+                    ((TextView) view.findViewById(R.id.stock)).setText(null);
+                }
+                ((TextView) view.findViewById(R.id.addr)).setText(store.addr); // 약국 주소
+                return view;
+            }
+        });
 
         //현재 위치로 이동 버튼
         UiSettings uiSettings = naverMap.getUiSettings();
@@ -151,6 +184,7 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
             for (Store store : result.stores) { //그 갯수만큼 반복하며 마커 생성
                 Marker marker = new Marker();
                 marker.setPosition(new LatLng(store.lat, store.lng)); //마커 위치 설정
+                marker.setTag(store); //마커에 store객체 붙여줌 - infowindow
 
                 //마스크 잔량 별 색 표시
                 if ("plenty".equalsIgnoreCase(store.remain_stat)) {
@@ -168,6 +202,7 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
 
                 marker.setAnchor(new PointF(0.5f, 0.5f)); //마커 아이콘 x축, y축 정중앙이 해당 위치를 나타냄
                 marker.setMap(naverMap);
+                marker.setOnClickListener(this);
                 markerList.add(marker);
             }
         }
@@ -202,6 +237,10 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
 
     @Override
     public boolean onClick(@NonNull Overlay overlay) {
+
+        Marker marker = (Marker) overlay;
+        infoWindow.open(marker);
+
         return false;
     }
 }
