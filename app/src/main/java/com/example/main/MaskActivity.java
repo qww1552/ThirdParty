@@ -87,8 +87,10 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
                     ((TextView) view.findViewById(R.id.stock)).setText("재고: 2 ~ 30개");
                 } else if ("empty".equalsIgnoreCase(store.remain_stat)){
                     ((TextView) view.findViewById(R.id.stock)).setText("재고: 0 ~ 1개");
+                } else if ("break".equalsIgnoreCase(store.remain_stat)) {
+                    ((TextView) view.findViewById(R.id.stock)).setText("판매중지");
                 } else {
-                    ((TextView) view.findViewById(R.id.stock)).setText(null);
+                    ((TextView) view.findViewById(R.id.stock)).setText("정보없음");
                 }
                 ((TextView) view.findViewById(R.id.addr)).setText(store.addr); // 약국 주소
                 return view;
