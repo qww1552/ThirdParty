@@ -30,7 +30,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapClickListener, Overlay.OnClickListener, OnMapReadyCallback, NaverMap.OnCameraChangeListener, NaverMap.OnCameraIdleListener{
+public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapClickListener, Overlay.OnClickListener,
+        OnMapReadyCallback, NaverMap.OnCameraChangeListener, NaverMap.OnCameraIdleListener{
 
 
     private FusedLocationSource locationSource;
