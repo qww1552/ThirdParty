@@ -54,7 +54,6 @@ public class NewsActivity extends AppCompatActivity {
             super.onPostExecute(elements);
             if(elements!=null){//검색 결과가 있을 경우
                 for(Element item:elements){
-                    Log.d("test","pass");
 
                     String title = item.select("title").text();
                     String link = item.select("originallink").text();
@@ -73,7 +72,6 @@ public class NewsActivity extends AppCompatActivity {
         if (last == -1) {
             last = link.indexOf(".kr");
             if(last==-1) last = link.indexOf(".net");
-
         }
         String res = link.substring(0, last+4);
         return res;
