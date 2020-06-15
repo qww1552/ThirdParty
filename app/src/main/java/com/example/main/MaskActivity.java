@@ -36,19 +36,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapClickListener, Overlay.OnClickListener,
         OnMapReadyCallback, NaverMap.OnCameraChangeListener, NaverMap.OnCameraIdleListener{
 
-
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
+    private InfoWindow infoWindow;
     private NaverMap naverMap;
 
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
 
-    LocationManager locationManager;
     LocationListener locationListener;
 
-    private InfoWindow infoWindow;
-
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,20 +117,14 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
                     float accuracy = location.getAccuracy();
                 }
             }
-
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-
             }
-
             @Override
             public void onProviderEnabled(String provider) {
-
             }
-
             @Override
             public void onProviderDisabled(String provider) {
-
             }
         };
     }
@@ -151,8 +142,6 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
             }
             return;
         }
-        super.onRequestPermissionsResult(
-                requestCode, permissions, grantResults);
         switch (requestCode) {
             case LOCATION_PERMISSION_REQUEST_CODE:
                 locationSource.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -173,10 +162,8 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
                     updateMapMarkers(result);
                 }
             }
-
             @Override
             public void onFailure(Call<StoreSaleResult> call, Throwable t) {
-
             }
         });
     }
@@ -191,18 +178,17 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
 
                 //마스크 잔량 별 색 표시
                 if ("plenty".equalsIgnoreCase(store.remain_stat)) {
-                    marker.setIcon(OverlayImage.fromResource(R.drawable.marker_green));     //100개 ~ (녹색): 'plenty'
+                    marker.setIcon(OverlayImage.fromResource(R.drawable.green));     //100개 ~ (녹색): 'plenty'
 
                 } else if ("some".equalsIgnoreCase(store.remain_stat)) {
-                    marker.setIcon(OverlayImage.fromResource(R.drawable.marker_yellow));    //30 ~ 100개(노랑색): 'some'
+                    marker.setIcon(OverlayImage.fromResource(R.drawable.yellow));    //30 ~ 100개(노랑색): 'some'
 
                 } else if ("few".equalsIgnoreCase(store.remain_stat)) {
-                    marker.setIcon(OverlayImage.fromResource(R.drawable.marker_red));       //2 ~ 30개(빨강색): 'few'
+                    marker.setIcon(OverlayImage.fromResource(R.drawable.red));       //2 ~ 30개(빨강색): 'few'
 
                 } else {
-                    marker.setIcon(OverlayImage.fromResource(R.drawable.marker_gray));      //0 ~ 1개 (회색): 'empty'
+                    marker.setIcon(OverlayImage.fromResource(R.drawable.gray));      //0 ~ 1개 (회색): 'empty'
                 }
-
                 marker.setAnchor(new PointF(0.5f, 0.5f)); //마커 아이콘 x축, y축 정중앙이 해당 위치를 나타냄
                 marker.setMap(naverMap);
                 marker.setOnClickListener(this);
@@ -235,15 +221,12 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
 
     @Override
     public void onMapClick(@NonNull PointF pointF, @NonNull LatLng latLng) {
-
     }
 
     @Override
     public boolean onClick(@NonNull Overlay overlay) {
-
         Marker marker = (Marker) overlay;
         infoWindow.open(marker);
-
         return false;
     }
 }
