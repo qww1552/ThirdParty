@@ -67,7 +67,7 @@
         https://www.data.go.kr/data/15043378/openapi.do  
 
   
-        - 외교부_국가·지역별 최신안전소식(코로나관련)
+        - 외교부_국가·지역별 최신안전소식(코로나관련)  
         https://www.data.go.kr/data/15043145/openapi.do
 
 
