@@ -100,10 +100,11 @@
 ### 이승훈
 >GPS 현재 위치 기반 움직임 추적 및 자동 탐색   
 - 지도 화면 중심점 기준 2km 이내, 지도 화면 이동 시 자동 탐색
-
+![IMG_20200616_015655](https://user-images.githubusercontent.com/49307262/84687702-1b2c1980-af79-11ea-8c7d-1f49980c5198.jpg)
 
 >공적 마스크 판매 약국 이름 및 위치, 주소 / 마스크 재고량 알림
 - 약국 정보 알림
+![IMG_20200616_015444](https://user-images.githubusercontent.com/49307262/84687685-15cecf00-af79-11ea-8232-4d6639ee1ccf.jpg)
 
 ### 김석현
 >ㅇ
