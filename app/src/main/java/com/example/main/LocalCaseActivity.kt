@@ -59,7 +59,7 @@ class LocalCaseActivity : AppCompatActivity() {
                 } catch (e : NullPointerException){
                     Toast.makeText(this@LocalCaseActivity, """데이터 받아오기 실패
                         | 다시 선택해 주세요.""".trimMargin(), Toast.LENGTH_LONG).show()
-                    val intent = Intent(this@LocalCaseActivity ,FirstPageActivity::class.java)
+                    val intent = Intent(this@LocalCaseActivity ,MainActivity::class.java)
                     startActivity(intent)
                 }
             }
