@@ -1,37 +1,129 @@
 # THIRDPARTY
+## 2020 오픈소스프로젝트
+<br/>
 
 ## 개요
 
-서드파티 - 오픈소스를 이용해 새로운 파생작을 만드는 세명의 파티원
+- ### 팀 소개
+
+
+    #### **< 서드파티 >**
+    오픈소스를 이용해 새로운 파생작을 만드는 세 명의 파티원
+
+
+    |팀원|역할|학번|
+    |:----:|:----:|:----:|
+    | **오민성** | 팀장, 개발 | 2016108272 |
+    | **이승훈** | 기획, 개발 | 2016108277 |
+    | **김석현** | 디자인, 개발 | 2016108255 |
+
+<br/>
+
+
+- ### 목표
+
+    <COVID19:지역알리미>
+
+    >지역별 확진자 수(전체, 일일) 알림
+        
+    >코로나 관련 뉴스 필터링
+
+    >약국 위치 및 마스크 재고량 알림
+
+<br/>
+
+
+- ### 배경과 Research 내용
+
+    -
+
+
 ***
 
-## 팀원
-- 오민성 / 팀장, 개발 / 2016108272 
-- 이승훈 / 기획, 개발 / 2016108277 
-- 김석현 / 디자인, 개발 / 2016108255 
+## 계획 및 성과 
+
+- ### 계획
+
+- ### 진행과정
+    ### 오민성
+    >네이버 뉴스 크롤링 > 코로나 관련 뉴스 검색 결과 지역별 필터링 >모듈 연결 > Notice 및 라이센스 고지  
+
+    ### 이승훈
+    >네이버 지도 앱 > 약국 위치, 주소 및 공적 마스크 재고량 알림 > 메인 엑티비티 제작 > 지도 마커 디자인  
+
+    ### 김석현
+    >지역별 확진자 수 현황 api 호출(발생률, 증감수) > UI 리소스 확보 > 엑티비티 디자인 > UI/UX 디자인
+
+
+- ### 성과
+
+
+
+- ### 사용한 api, 사용한 오픈소스
+
+    - **<공공데이터 API>**
+
+        - 보건복지부_코로나19 시·도발생_현황  
+        https://www.data.go.kr/data/15043378/openapi.do  
+
+  
+        - 외교부_국가·지역별 최신안전소식(코로나관련)  
+        https://www.data.go.kr/data/15043145/openapi.do
+
+
+        - 공적마스크 판매처 및 재고 현황 조회 API 서비스  
+        https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1
+
+
+
+    - **<네이버 open API>**
+        - 네이버 Mobile Dynamic Map   
+        https://developers.naver.com/products/intro/plan/
+
+
+        - 네이버 뉴스 검색  
+        https://developers.naver.com/docs/search/news/
+
+
 
 ***
-## 오픈소스 프로젝트  
-<COVID19:지역알리미>
-현재 위치 기반 지역별 확진자 수(전체, 일일) 알림 및 코로나 관련 뉴스 필터링
 
-***
-<공공데이터 API>
+## 개인별 성과
 
-- 보건복지부_코로나19 시·도발생_현황
-https://www.data.go.kr/data/15043378/openapi.do
+### 오민성
+>ㅇ
+-
 
-- 외교부_국가·지역별 최신안전소식(코로나관련)
-https://www.data.go.kr/data/15043145/openapi.do
+>ㅇ
+-
 
-***
-<네이버 오픈 API>
+### 이승훈
+>GPS 현재 위치 기반 움직임 추적 및 자동 탐색   
+- 지도 화면 중심점 기준 2km 이내, 지도 화면 이동 시 자동 탐색
+![IMG_20200616_015655](https://user-images.githubusercontent.com/49307262/84687702-1b2c1980-af79-11ea-8c7d-1f49980c5198.jpg)
 
-- https://developers.naver.com/products/intro/plan/
+>공적 마스크 판매 약국 이름 및 위치, 주소 / 마스크 재고량 알림
+- 약국 정보 알림
+![IMG_20200616_015444](https://user-images.githubusercontent.com/49307262/84687685-15cecf00-af79-11ea-8232-4d6639ee1ccf.jpg)
 
-***
+### 김석현
+>ㅇ
+-
 
-<Google 뉴스>
+>ㅇ
+-
 
-- 지역뉴스
-https://news.google.com/topics/CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE/sections/CAQiUENCSVNOam9JYkc5allXeGZkakpDRUd4dlkyRnNYM1l5WDNObFkzUnBiMjV5Q3hJSkwyMHZNRE50T1hOMmVnc0tDUzl0THpBemJUbHpkaWdBKjEIACotCAoiJ0NCSVNGem9JYkc5allXeGZkako2Q3dvSkwyMHZNRE50T1hOMktBQVABUAE?hl=ko&gl=KR&ceid=KR%3Ako
+
+*** 
+
+## 프로젝트 결과물 시연
+
+- 프로젝트 후기 
+
+    - 좋았던 점   
+
+      공공데이터 api 활용하고 서로 융합하여 더 유용한 기능을 만들어내기 위해 고민하는 과정에서 부족한 점을 찾아 보완하고 공부하며 많이 배울 수 있었습니다.
+
+    - 아쉬운 점
+
+      코로나 바이러스의 여파로 팀원들과 직접 소통하지 못하여 시간적인 면이나 계획 수립 및 추진 과정에서 비효율적으로 진행되었던 점이 아쉬웠습니다. 
