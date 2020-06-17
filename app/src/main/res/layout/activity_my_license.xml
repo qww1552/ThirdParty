@@ -5,18 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MaskActivity">
+    tools:context=".MyLicenseActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button2"
         android:layout_width="110dp"
         android:layout_height="36dp"
         android:backgroundTint="#0B9BC9"
         android:text="Back"
         android:textColor="#ffffff" />
 
-    <com.naver.maps.map.MapView
-        android:id="@+id/map_view"
+    <TextView
+        android:id="@+id/editTextTextMultiLine"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/license" />
 </LinearLayout>
