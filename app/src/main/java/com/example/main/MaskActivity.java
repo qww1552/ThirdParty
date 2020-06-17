@@ -6,6 +6,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,14 @@ public class MaskActivity extends AppCompatActivity implements NaverMap.OnMapCli
 
         MapView mapView = findViewById(R.id.map_view);
         mapView.getMapAsync(this);
+
+        Button backBtn = findViewById(R.id.button3);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override

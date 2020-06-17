@@ -5,18 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MaskActivity">
+    tools:context=".LicenseActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button4"
         android:layout_width="110dp"
         android:layout_height="36dp"
         android:backgroundTint="#0B9BC9"
         android:text="Back"
         android:textColor="#ffffff" />
 
-    <com.naver.maps.map.MapView
-        android:id="@+id/map_view"
+    <Button
+        android:id="@+id/licenseBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="라이센스 정보"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/ossBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="오픈소스 정보"
+        android:textSize="30sp" />
+
 </LinearLayout>

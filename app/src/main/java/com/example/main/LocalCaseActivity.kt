@@ -94,8 +94,9 @@ class LocalCaseActivity : AppCompatActivity() {
             startActivity(intent)
         }
         title_button.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this,MainActivity::class.java)
+            //startActivity(intent)
+            finish();
         }
 
     }
