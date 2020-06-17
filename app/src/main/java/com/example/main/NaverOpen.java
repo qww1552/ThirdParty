@@ -36,7 +36,7 @@ public class NaverOpen {
             }
             br.close();
 
-            res = filter(response.toString());// xml태그가 제거된 검색 결과
+            res = filter(response.toString());// xml태그 제거
             //Log.d("검색결과",res);
         } catch (Exception e) {
             System.out.println(e);
