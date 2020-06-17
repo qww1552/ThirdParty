@@ -96,7 +96,11 @@
 ### 오민성
 >네이버 뉴스검색 API 활용 코로나 관련 뉴스기사 검색
 - 코로나 관련 뉴스 지역별로 필터링<br>
-![image](https://user-images.githubusercontent.com/62738554/84743486-012c1e80-afed-11ea-951e-51e3c88e606c.png)
+![image](https://user-images.githubusercontent.com/62738554/84743486-012c1e80-afed-11ea-951e-51e3c88e606c.png) <br>
+>라이센스 표기 <br>
+![라이센스정보](https://user-images.githubusercontent.com/62738554/84851499-676c7c00-b095-11ea-9bfc-81811714ff3b.PNG) <br>
+>오픈소스 라이센스 표기 <br>
+![오픈소스정보](https://user-images.githubusercontent.com/62738554/84851502-6a676c80-b095-11ea-81db-ef4c383d9b80.PNG) <br>
 
 
 ### 이승훈
