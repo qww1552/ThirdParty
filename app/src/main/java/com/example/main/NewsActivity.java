@@ -76,12 +76,20 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private static String findRoot(String link) {//기사 출처 추출
+        String res = "";
         int last = link.indexOf(".com");
         if (last == -1) {
             last = link.indexOf(".kr");
             if(last==-1) last = link.indexOf(".net");
         }
-        String res = link.substring(0, last+4);
+
+        try {
+            res = link.substring(0, last + 4);
+        } catch (Exception e) {
+            res = link;
+            Log.d("링크",link);
+        }
+
         return res;
     }
 
