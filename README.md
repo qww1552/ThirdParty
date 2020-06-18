@@ -85,6 +85,7 @@
         - 네이버 뉴스 검색  
         https://developers.naver.com/docs/search/news/
 
+    [![160818_NAVER OpenAPI_SimpleGuide](https://user-images.githubusercontent.com/62738554/84974099-88989f80-b15d-11ea-9831-0b999c81d87e.png)](https://developers.naver.com)
 
 
     - **< Jsoup >**
