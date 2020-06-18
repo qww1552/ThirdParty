@@ -20,6 +20,7 @@
 <br/>
 
 
+
 - ### 목표
 
     <COVID19:지역알리미>
@@ -89,6 +90,10 @@
     - **< Jsoup >**
         - Jsoup HTML parser<br>
         https://jsoup.org/
+        
+    - **< Retrofit >**
+        - A type-safe HTTP client for Android and Java<br>
+        http://devflow.github.io/retrofit-kr/
 ***
 
 ## 개인별 성과
@@ -113,12 +118,14 @@
 ![IMG_20200616_015444](https://user-images.githubusercontent.com/49307262/84687685-15cecf00-af79-11ea-8232-4d6639ee1ccf.jpg)
 
 ### 김석현
->ㅇ
--
+- 시도별 확진자 관련 최신 정보 표시
 
->ㅇ
--
+![KakaoTalk_20200617_104824568](https://user-images.githubusercontent.com/31850597/84884538-d87b5600-b0cc-11ea-8c0b-aff17946ffec.jpg)
 
+
+- UI리소스 제작&재배치
+
+![KakaoTalk_20200617_132724684](https://user-images.githubusercontent.com/31850597/84884555-ddd8a080-b0cc-11ea-9783-cb1f4673437f.jpg)
 
 *** 
 
